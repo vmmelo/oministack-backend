@@ -8,5 +8,4 @@ Utilizei as seguintes dependências:
 - ```knexjs``` para conexão com o banco de dados
 - ```express``` para facilitar a criação de rotas
 
-Deploy da aplicação feito com Heroku, utilizando o Heroku CLI para acessar o terminal
-https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+Deploy da aplicação feito com Heroku, adicionando uma variavel de ambiente PORT=80 para conseguir acessar o ambiente
