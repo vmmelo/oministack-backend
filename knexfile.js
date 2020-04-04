@@ -13,36 +13,24 @@ module.exports = {
     useNullAsDefault: true
   },
 
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  },
-
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      host: 'ec2-3-91-112-166.compute-1.amazonaws.com',
+      database: 'dc9079ejr2mrp1',
+      user:     'jcdrsdgrksxpfx',
+      password: '24589fd5fe7a2cd8cbf9c59710560ddd23c02574a835b8829ec63fe1bd1a1a2c',
+      port: 5432
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      tableName: 'knex_migrations',
+      directory: './src/database/migrations',
+    },
+    useNullAsDefault: true
   }
 
 };
