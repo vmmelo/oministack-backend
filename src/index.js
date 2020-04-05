@@ -5,7 +5,7 @@ const app = express();
 
 app.use(cors(
     {
-        exposedHeaders: ['x-total-count'] //expoe o header para poder ser consultado pelo axios no frontend
+        exposedHeaders: ['X-Total-Count'] //expoe o header para poder ser consultado pelo axios no frontend
     }
     // {origin: 'http://meuapp.com'} para codigo em producao, autoriza essa url para fazer requisicoes
 ));
