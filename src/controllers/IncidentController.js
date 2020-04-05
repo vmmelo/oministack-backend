@@ -20,7 +20,8 @@ module.exports = {
                 'ongs.city',
                 'ongs.uf',
             ]);
-        res.header('X-Total-Count', count['count(*)']);
+        res.header('X-Total-Count', 99);
+        res.header('Teste', 99);
         return res.json(incidents);
     },
     async create(req, res)
