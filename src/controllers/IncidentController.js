@@ -20,7 +20,7 @@ module.exports = {
                 'ongs.city',
                 'ongs.uf',
             ]);
-        res.header('x-total-count', count['count(*)']);
+        res.header('x-total-count', 26);
         res.header('teste', 'alo');
         return res.json(incidents);
     },
