@@ -21,6 +21,7 @@ module.exports = {
                 'ongs.uf',
             ]);
         res.header('x-total-count', count['count(*)']);
+        res.header('teste', 'alo');
         return res.json(incidents);
     },
     async create(req, res)
