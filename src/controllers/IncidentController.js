@@ -19,7 +19,8 @@ module.exports = {
                 'ongs.whatsapp',
                 'ongs.city',
                 'ongs.uf',
-            ]);
+            ])
+            .orderBy('id');
         res.header('X-Total-Count', count['incidents']);
         return res.json(incidents);
     },
