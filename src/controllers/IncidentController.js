@@ -6,7 +6,7 @@ module.exports = {
         //valor default = 1
         const { page = 1 } = req.query;
 
-        const [count] = await connection('incidents').count();
+        const [count] = await connection('incidents').count('id as incidents');
 
         const incidents = await connection('incidents')
             .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
@@ -20,8 +20,7 @@ module.exports = {
                 'ongs.city',
                 'ongs.uf',
             ]);
-        res.header('X-Total-Count', 99);
-        res.header('Teste', 99);
+        res.header('X-Total-Count', count['incidents']);
         return res.json(incidents);
     },
     async create(req, res)
