@@ -20,7 +20,7 @@ module.exports = {
                 'ongs.city',
                 'ongs.uf',
             ])
-            .orderBy('id');
+            .orderBy(['id']);
         res.header('X-Total-Count', count['incidents']);
         return res.json(incidents);
     },
