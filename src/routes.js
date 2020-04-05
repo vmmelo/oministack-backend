@@ -12,11 +12,11 @@ routes.post('/sessions', SessionController.create);
 //adiciona a validacao com o celebrate antes da criacao da ong (nao faz sentido validar depois de criar)
 routes.post('/ongs', celebrate({
     [Segments.BODY]: Joi.object().keys({
-        name: Joi.string().required(),
-        email: Joi.string().required().email(),
-        whatsapp: Joi.string().required().min(10).max(11),
-        city: Joi.string().required(),
-        uf: Joi.string().required().length(2),
+        name: Joi.string().required().error(new Error('Nome é obrigatório')),
+        email: Joi.string().required().email().error(new Error('Digite um email válido')),
+        whatsapp: Joi.string().required().min(10).max(11).error(new Error('O número deve conter o DDD + número')),
+        city: Joi.string().required().error(new Error('Cidade é obrigatória')),
+        uf: Joi.string().required().length(2).error(new Error('UF é obrigatório. Ex: PE')),
     })
 }), OngController.create);
 
