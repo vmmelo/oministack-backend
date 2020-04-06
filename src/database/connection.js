@@ -1,6 +1,13 @@
 const knex = require('knex');
-const config = require('../../knexfile');
+const configuration = require('../../knexfile');
 
-const connection = knex(process.env.NODE_ENV === 'production' ? config.production : config.development);
+let config;
+//busca na variavel de ambiente qual banco usar (test, production ou development)
+if(process.env.NODE_ENV !== undefined) {
+    config = configuration[process.env.NODE_ENV];
+} else {
+    config = configuration.development;
+}
 
+const connection = knex(config);
 module.exports = connection;
